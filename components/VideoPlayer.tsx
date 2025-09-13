@@ -2,7 +2,8 @@
 
 import dynamic from "next/dynamic";
 
-const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
+// Properly type the dynamic component as a React Functional Component
+const ReactPlayer = dynamic(() => import("react-player"), { ssr: false }) as React.FC<any>;
 
 interface VideoPlayerProps {
   url: string;
