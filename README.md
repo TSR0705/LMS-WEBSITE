@@ -294,31 +294,17 @@ npm run sanity:dev
 - Toast notifications
 - Modal dialogs
 
-
-
-
-#### What You'll Learn:
-
-- 📚 Comprehensive Full Stack Development Training
-- 🎯 50+ Real-World Projects
-- 🤝 Access to the PAPAFAM Developer Community
-- 🎓 Weekly Live Coaching Calls
-- 🤖 AI & Modern Tech Stack Mastery
-- 💼 Career Guidance & Interview Prep
-
-#### Course Features:
-
-- ⭐ Lifetime Access to All Content
-- 🎯 Project-Based Learning
-- 💬 Private Discord Community
-- 🔄 Regular Content Updates
-- 👥 Peer Learning & Networking
-- 📈 Personal Growth Tracking
-
-## Support
-
-For support, join our Discord community or email support@example.com
-
 ---
 
 Built with ❤️ using Next.js, Sanity, Clerk, and Stripe
+---
+## 👤 About the Creator
+
+<div align="center">
+  <img src="https://avatars.githubusercontent.com/TSR0705" alt="Tanmay Singh" width="100" style="border-radius:50%;" />
+  <h3>Tanmay Singh</h3>
+<p>
+  <em>Rising Full-Stack Innovator Shaping Next-Gen Web Experiences</em><br/>
+  Cloud-First Mindset | UI/UX-Driven | JavaScript at the Core
+</p>
+
