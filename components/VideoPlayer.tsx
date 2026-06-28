@@ -1,6 +1,7 @@
 "use client";
 
-import dynamic from "next/dynamic";
+import { useEffect, useState } from "react";
+import ReactPlayer from "react-player";
 
 interface PlayerProps {
   url: string;
@@ -10,17 +11,27 @@ interface PlayerProps {
   playing?: boolean;
 }
 
-// Properly type the dynamic component as a React Component
-const ReactPlayer = dynamic(() => import("react-player"), { ssr: false }) as React.ComponentType<PlayerProps>;
+const Player = ReactPlayer as unknown as React.ComponentType<PlayerProps>;
 
 interface VideoPlayerProps {
   url: string;
 }
 
 export const VideoPlayer = ({ url }: VideoPlayerProps) => {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) {
+    return (
+      <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-lg border border-border bg-black animate-pulse" />
+    );
+  }
   return (
     <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-lg border border-border bg-black">
-      <ReactPlayer
+      <Player
         url={url}
         width="100%"
         height="100%"
