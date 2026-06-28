@@ -10,7 +10,7 @@ export async function isEnrolledInCourse(clerkId: string, courseId: string) {
       params: { clerkId },
     });
 
-    if (!studentId) {
+    if (!studentId?.data) {
       console.log("No student found with clerkId:", clerkId);
       return false;
     }
