@@ -97,11 +97,8 @@ export default async function CoursePage({ params }: CoursePageProps) {
                       </h3>
                     </div>
                     <div className="divide-y divide-border">
-                      {module.lessons?.map((lesson, lessonIndex) => (
-                        <div
-                          key={lesson._id}
-                          className="p-4 hover:bg-muted/50 transition-colors"
-                        >
+                      {module.lessons?.map((lesson, lessonIndex) => {
+                        const content = (
                           <div className="flex items-center gap-4">
                             <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center font-medium">
                               {lessonIndex + 1}
@@ -113,8 +110,29 @@ export default async function CoursePage({ params }: CoursePageProps) {
                               </span>
                             </div>
                           </div>
-                        </div>
-                      ))}
+                        );
+
+                        if (isEnrolled) {
+                          return (
+                            <Link
+                              key={lesson._id}
+                              href={`/dashboard/courses/${course._id}/lessons/${lesson._id}`}
+                              className="block p-4 hover:bg-muted/50 transition-colors"
+                            >
+                              {content}
+                            </Link>
+                          );
+                        }
+
+                        return (
+                          <div
+                            key={lesson._id}
+                            className="p-4 hover:bg-muted/50 transition-colors"
+                          >
+                            {content}
+                          </div>
+                        );
+                      })}
                     </div>
                   </div>
                 ))}
