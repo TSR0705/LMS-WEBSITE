@@ -21,9 +21,15 @@ export async function uncompleteLessonById({
     throw new Error("Student not found");
   }
 
-  // Find and delete the lesson completion record
-  await client.delete({
-    query: `*[_type == "lessonCompletion" && student._ref == $studentId && lesson._ref == $lessonId][0]`,
-    params: { studentId: student.data, lessonId },
+  const studentId = student.data;
+
+  // Find the lesson completion record ID first
+  const completion = await sanityFetch({
+    query: groq`*[_type == "lessonCompletion" && student._ref == $studentId && lesson._ref == $lessonId][0]._id`,
+    params: { studentId, lessonId },
   });
+
+  if (completion.data) {
+    await client.delete(completion.data);
+  }
 }
