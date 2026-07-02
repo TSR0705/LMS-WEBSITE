@@ -1,6 +1,6 @@
-import { client } from "../../lib/adminClient";
+import { client } from "../lib/adminClient";
 import groq from "groq";
-import { sanityFetch } from "../../lib/live";
+import { sanityFetch } from "../lib/live";
 import { EnrollmentService } from "./EnrollmentService";
 import { PaymentService } from "./PaymentService";
 

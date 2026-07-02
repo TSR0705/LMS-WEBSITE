@@ -1,6 +1,6 @@
-import { client } from "../../lib/adminClient";
+import { client } from "../lib/adminClient";
 import groq from "groq";
-import { sanityFetch } from "../../lib/live";
+import { sanityFetch } from "../lib/live";
 
 interface CreateEnrollmentParams {
   studentId: string;

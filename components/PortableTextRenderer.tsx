@@ -91,6 +91,7 @@ const components: PortableTextComponents = {
 };
 
 interface PortableTextRendererProps {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   value: any; // Type 'any' used here to accommodate Sanity's Portable Text array
 }
 
