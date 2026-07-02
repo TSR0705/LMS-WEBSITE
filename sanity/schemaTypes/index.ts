@@ -8,6 +8,8 @@ import { studentType } from "./StudentType";
 import { enrollmentType } from "./enrollmentType";
 import { categoryType } from "./categoryType";
 import { lessonCompletionType } from "./lessonCompletionType";
+import { paymentType } from "./paymentType";
+import { processedStripeEventType } from "./processedStripeEventType";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -20,6 +22,8 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     enrollmentType,
     categoryType,
     lessonCompletionType,
+    paymentType,
+    processedStripeEventType,
   ],
 };
 
@@ -31,3 +35,5 @@ export * from "./StudentType";
 export * from "./enrollmentType";
 export * from "./categoryType";
 export * from "./lessonCompletionType";
+export * from "./paymentType";
+export * from "./processedStripeEventType";

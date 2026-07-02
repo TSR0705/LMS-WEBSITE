@@ -2,7 +2,7 @@ import { headers } from "next/headers";
 import { NextResponse } from "next/server";
 import Stripe from "stripe";
 import { getStudentByClerkId } from "@/sanity/lib/student/getStudentByClerkId";
-import { createEnrollment } from "@/sanity/lib/student/createEnrollment";
+import { StripeWebhookService } from "@/sanity/services/StripeWebhookService";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
   apiVersion: "2023-10-16" as Stripe.LatestApiVersion,
@@ -52,12 +52,17 @@ export async function POST(req: Request) {
         return new NextResponse("Student not found", { status: 400 });
       }
 
-      // Create an enrollment record in Sanity
-      await createEnrollment({
+      console.log(
+        `[Webhook] Processing ${event.id} (Session: ${session.id}) for Student: ${student.data._id}, Course: ${courseId}`
+      );
+
+      // Use the service layer to orchestrate the creation
+      await StripeWebhookService.processCheckoutSessionCompleted({
+        eventId: event.id,
         studentId: student.data._id,
         courseId,
+        amount: session.amount_total || 0, // already in cents for payment tracking
         paymentId: session.id,
-        amount: session.amount_total! / 100, // Convert from cents to dollars
       });
 
       return new NextResponse(null, { status: 200 });

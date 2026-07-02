@@ -28,8 +28,9 @@ export async function createStudentIfNotExists({
     return existingStudentQuery.data;
   }
 
-  // If no student exists, create a new one
-  const newStudent = await client.create({
+  // Use createIfNotExists with a deterministic ID to prevent race conditions
+  const newStudent = await client.createIfNotExists({
+    _id: `student-${clerkId}`,
     _type: "student",
     clerkId,
     email,
@@ -38,7 +39,7 @@ export async function createStudentIfNotExists({
     imageUrl,
   });
 
-  console.log("New student created", newStudent);
+  console.log("New student created or existed", newStudent);
 
   return newStudent;
 }

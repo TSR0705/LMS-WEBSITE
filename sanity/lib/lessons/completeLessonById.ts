@@ -46,8 +46,9 @@ export async function completeLessonById({
       throw new Error("Could not find module or course for lesson");
     }
 
-    // Create new completion record
-    const completion = await client.create({
+    // Create new completion record with deterministic ID
+    const completion = await client.createIfNotExists({
+      _id: `completion-${studentId}-${lessonId}`,
       _type: "lessonCompletion",
       student: {
         _type: "reference",

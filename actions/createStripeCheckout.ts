@@ -7,7 +7,7 @@ import { urlFor } from "@/sanity/lib/image";
 import getCourseById from "@/sanity/lib/courses/getCourseById";
 import { createStudentIfNotExists } from "@/sanity/lib/student/createStudentIfNotExists";
 import { clerkClient } from "@clerk/nextjs/server";
-import { createEnrollment } from "@/sanity/lib/student/createEnrollment";
+import { EnrollmentService } from "@/sanity/services/EnrollmentService";
 
 export async function createStripeCheckout(courseId: string, userId: string) {
   try {
@@ -38,6 +38,17 @@ export async function createStripeCheckout(courseId: string, userId: string) {
       throw new Error("User not found");
     }
 
+    // 1.5. Check if user is already enrolled
+    const isEnrolled = await EnrollmentService.checkEnrollmentExists(
+      user._id,
+      course._id
+    );
+
+    if (isEnrolled) {
+      // If already enrolled, return url to course page
+      return { url: `/courses/${course.slug?.current}` };
+    }
+
     // 2. Validate course data and prepare price for Stripe
     if (!course.price && course.price !== 0) {
       throw new Error("Course price is not set");
@@ -46,7 +57,7 @@ export async function createStripeCheckout(courseId: string, userId: string) {
 
     // if course is free, create enrollment and redirect to course page (BYPASS STRIPE CHECKOUT)
     if (priceInCents === 0) {
-      await createEnrollment({
+      await EnrollmentService.createEnrollment({
         studentId: user._id,
         courseId: course._id,
         paymentId: "free",

@@ -1,0 +1,128 @@
+[
+  {
+    "_createdAt": "2025-09-15T17:37:51Z",
+    "_id": "8d467647-2011-4a41-9723-4144e57d008f",
+    "_updatedAt": "2025-09-15T17:40:41Z",
+    "amount": 49,
+    "course": {
+      "_ref": "186c5441-ee14-40f6-96e4-9d38d1712961",
+      "_type": "reference"
+    },
+    "enrolledAt": "2025-09-15T17:37:34.972Z",
+    "paymentId": "pi_3S7gMTQrkySmAsnX1HoECBlQ",
+    "source": null,
+    "status": null,
+    "student": {
+      "_ref": "3d8d6101-5c5a-4aac-8358-ee5fd0e7e9ba",
+      "_type": "reference"
+    }
+  },
+  {
+    "_createdAt": "2025-09-12T16:46:08Z",
+    "_id": "9821e37c-fb2c-4123-97dd-2c44c3094aa8",
+    "_updatedAt": "2025-09-12T16:46:51Z",
+    "amount": 199,
+    "course": {
+      "_ref": "89f68561-d88a-4151-ab19-e75e1bb7ec25",
+      "_type": "reference"
+    },
+    "enrolledAt": "2025-09-12T16:46:05.613Z",
+    "paymentId": "31357895254555",
+    "source": null,
+    "status": null,
+    "student": {
+      "_ref": "2d142e7f-b8fa-46ff-908b-d7ac5b78f48a",
+      "_type": "reference"
+    }
+  },
+  {
+    "_createdAt": "2026-07-01T15:08:25Z",
+    "_id": "Kra5TYIFOKLIQlRCccNFTn",
+    "_updatedAt": "2026-07-01T15:08:25Z",
+    "amount": 49,
+    "course": {
+      "_ref": "186c5441-ee14-40f6-96e4-9d38d1712961",
+      "_type": "reference"
+    },
+    "enrolledAt": "2026-07-01T15:08:25.081Z",
+    "paymentId": "cs_test_a1fiwN1YkKRdLlDDTZGPf2H6RzWF9rqV2pUoI4BJPU12Wpt4plW7a5ui30",
+    "source": null,
+    "status": null,
+    "student": {
+      "_ref": "2d142e7f-b8fa-46ff-908b-d7ac5b78f48a",
+      "_type": "reference"
+    }
+  },
+  {
+    "_createdAt": "2026-07-01T15:39:27Z",
+    "_id": "Kra5TYIFOKLIQlRCccfkLv",
+    "_updatedAt": "2026-07-01T15:39:27Z",
+    "amount": 49,
+    "course": {
+      "_ref": "186c5441-ee14-40f6-96e4-9d38d1712961",
+      "_type": "reference"
+    },
+    "enrolledAt": "2026-07-01T15:39:27.341Z",
+    "paymentId": "cs_test_a1yuI0NhcDr5CwyEdmVWFh0yEMAdIcCbRuwgdl6i7AXxbDnov507niaYft",
+    "source": null,
+    "status": null,
+    "student": {
+      "_ref": "2d142e7f-b8fa-46ff-908b-d7ac5b78f48a",
+      "_type": "reference"
+    }
+  },
+  {
+    "_createdAt": "2026-07-01T15:43:09Z",
+    "_id": "Kra5TYIFOKLIQlRCccgXuz",
+    "_updatedAt": "2026-07-01T15:43:09Z",
+    "amount": 49,
+    "course": {
+      "_ref": "186c5441-ee14-40f6-96e4-9d38d1712961",
+      "_type": "reference"
+    },
+    "enrolledAt": "2026-07-01T15:43:09.742Z",
+    "paymentId": "cs_test_a1yXPHsnNkgBj7o8wtvgsQvMOAiF8Gt4veSoGFTYlGTNKK3b00VhnUR4Ou",
+    "source": null,
+    "status": null,
+    "student": {
+      "_ref": "2d142e7f-b8fa-46ff-908b-d7ac5b78f48a",
+      "_type": "reference"
+    }
+  },
+  {
+    "_createdAt": "2026-07-01T15:57:50Z",
+    "_id": "Kra5TYIFOKLIQlRCccpzxB",
+    "_updatedAt": "2026-07-01T15:57:50Z",
+    "amount": 49,
+    "course": {
+      "_ref": "186c5441-ee14-40f6-96e4-9d38d1712961",
+      "_type": "reference"
+    },
+    "enrolledAt": "2026-07-01T15:57:50.176Z",
+    "paymentId": "cs_test_a1yXPHsnNkgBj7o8wtvgsQvMOAiF8Gt4veSoGFTYlGTNKK3b00VhnUR4Ou",
+    "source": null,
+    "status": null,
+    "student": {
+      "_ref": "2d142e7f-b8fa-46ff-908b-d7ac5b78f48a",
+      "_type": "reference"
+    }
+  },
+  {
+    "_createdAt": "2025-09-12T16:57:19Z",
+    "_id": "fb382910-0b57-42ec-a7e3-ac1836202929",
+    "_updatedAt": "2025-09-12T16:57:41Z",
+    "amount": 99,
+    "course": {
+      "_ref": "6b398727-5443-4f97-aa45-d075ec9b6a75",
+      "_type": "reference"
+    },
+    "enrolledAt": "2025-09-12T16:57:14.314Z",
+    "paymentId": "31357895254555",
+    "source": null,
+    "status": null,
+    "student": {
+      "_ref": "2d142e7f-b8fa-46ff-908b-d7ac5b78f48a",
+      "_type": "reference"
+    }
+  }
+]

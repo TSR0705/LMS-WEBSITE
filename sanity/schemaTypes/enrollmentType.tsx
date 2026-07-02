@@ -40,6 +40,37 @@ export const enrollmentType = defineType({
       type: "datetime",
       initialValue: () => new Date().toISOString(),
     }),
+    defineField({
+      name: "status",
+      title: "Status",
+      type: "string",
+      options: {
+        list: [
+          { title: "Active", value: "ACTIVE" },
+          { title: "Refunded", value: "REFUNDED" },
+          { title: "Revoked", value: "REVOKED" },
+          { title: "Expired", value: "EXPIRED" },
+        ],
+      },
+      initialValue: "ACTIVE",
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: "source",
+      title: "Source",
+      type: "string",
+      options: {
+        list: [
+          { title: "Stripe", value: "Stripe" },
+          { title: "Admin", value: "Admin" },
+          { title: "Coupon", value: "Coupon" },
+          { title: "Manual", value: "Manual" },
+          { title: "Migration", value: "Migration" },
+        ],
+      },
+      initialValue: "Stripe",
+      validation: (rule) => rule.required(),
+    }),
   ],
   preview: {
     select: {
