@@ -1,7 +1,7 @@
 import { redirect } from "next/navigation";
 import { currentUser } from "@clerk/nextjs/server";
 import { getLessonById } from "@/sanity/lib/lessons/getLessonById";
-import { PortableText } from "@portabletext/react";
+import { PortableTextRenderer } from "@/components/PortableTextRenderer";
 import { LoomEmbed } from "@/components/LoomEmbed";
 import { VideoPlayer } from "@/components/VideoPlayer";
 import { LessonCompleteButton } from "@/components/LessonCompleteButton";
@@ -44,9 +44,7 @@ export default async function LessonPage({ params }: LessonPageProps) {
             {lesson.content && (
               <div>
                 <h2 className="text-xl font-semibold mb-4">Lesson Notes</h2>
-                <div className="prose prose-blue dark:prose-invert max-w-none">
-                  <PortableText value={lesson.content} />
-                </div>
+                <PortableTextRenderer value={lesson.content} />
               </div>
             )}
 

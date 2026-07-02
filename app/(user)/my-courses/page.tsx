@@ -52,12 +52,12 @@ export default async function MyCoursesPage() {
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {coursesWithProgress.map((item) => {
+            {coursesWithProgress.map((item, index) => {
               if (!item || !item.course) return null;
 
               return (
                 <CourseCard
-                  key={item.course._id}
+                  key={`${item.course._id}-${index}`}
                   course={item.course}
                   progress={item.progress}
                   href={`/dashboard/courses/${item.course._id}`}
